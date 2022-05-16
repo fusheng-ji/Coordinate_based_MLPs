@@ -27,20 +27,6 @@ graph LR
 |                 Super-Gaussian                  |  ![](images/super_Gaussian.bmp)  |
 |                     ExpSin                      |      ![](images/expsin.bmp)      |
 
-## Requirements
-
-```yaml
-python==3.8.12
-einops==0.4.1
-kornia==0.6.4
-numpy==1.21.2
-opencv-python==4.5.5.64
-pytorch==1.11.0
-pytorch-lightning==1.6.3
-tqdm==4.63.0
-wandb==0.12.16
-```
-
 ## How to run
 
 ### Data preparation
