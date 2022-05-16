@@ -16,19 +16,16 @@ graph LR
 | :---------------------------------------------: | :------------------------------: |
 |             Fourier feature mapping             |     ![](images/fourier.bmp)      |
 | Fourier feature mapping (Gaussian distribution) | ![](images/guassian_mapping.bmp) |
-
-
-
-| Activation function |             Equation             |
-| :-----------------: | :------------------------------: |
-|        ReLU         |       ![](images/ReLU.bmp)       |
-|        Siren        |      ![](images/siren.bmp)       |
-|      Gaussian       |     ![](images/gaussian.bmp)     |
-|      Quadratic      |    ![](images/quadratic.bmp)     |
-|   Multi Quadratic   | ![](images/mutil_quardratic.bmp) |
-|      Laplacian      |    ![](images/laplacian.bmp)     |
-|   Super-Gaussian    |  ![](images/super_Gaussian.bmp)  |
-|       ExpSin        |      ![](images/expsin.bmp)      |
+|                                                 |                                  |
+|             **Activation function**             |           **Equation**           |
+|                      ReLU                       |       ![](images/ReLU.bmp)       |
+|                      Siren                      |      ![](images/siren.bmp)       |
+|                    Gaussian                     |     ![](images/gaussian.bmp)     |
+|                    Quadratic                    |    ![](images/quadratic.bmp)     |
+|                 Multi Quadratic                 | ![](images/mutil_quardratic.bmp) |
+|                    Laplacian                    |    ![](images/laplacian.bmp)     |
+|                 Super-Gaussian                  |  ![](images/super_Gaussian.bmp)  |
+|                     ExpSin                      |      ![](images/expsin.bmp)      |
 
 ## Requirements
 
@@ -72,8 +69,6 @@ bash exp_640000.sh
 
 ### ReLU w/o P.E.(Fourier Mapping)
 
-![](images/fourier.bmp)
-
 #### Without Positional Encoding
 
 | Image size 800*800, batch size 1024 | Image size 800\*800, batch size 800*800 |
@@ -87,8 +82,6 @@ bash exp_640000.sh
 | ![](images/raw_mlps_pe_800_1024.png) | ![](images/raw_mlps_pe_800_640000.png)  |
 
 ### ReLU with Fourier Mapping( Gaussian distribution)
-
-![](images/guassian_mapping.bmp)
 
 #### 2π
 
@@ -110,9 +103,6 @@ bash exp_640000.sh
 
 ### Siren activation
 
-| ![](images/siren.bmp) |
-| :-------------------: |
-
 As Siren dependent on quality of initialization, in this experiment I didn't initialize it specially, so the outputs are bad.
 
 #### omega_0 = 30
@@ -122,8 +112,6 @@ As Siren dependent on quality of initialization, in this experiment I didn't ini
 |  ![](images/siren_30_800_1024.png)  |   ![](images/siren_30_800_640000.png)   |
 
 ### Gaussian activation
-
-![](images/gaussian.bmp)
 
 #### a=0.1 with P.E.
 
@@ -138,8 +126,6 @@ As Siren dependent on quality of initialization, in this experiment I didn't ini
 |  ![](images/gau_a0.1_800_1024.png)  |   ![](images/gau_a0.1_800_640000.png)   |
 
 ### Super-Gaussian activation
-
-![](images/super_Gaussian.bmp)
 
 #### a=0.1 b=2 with P.E.
 
