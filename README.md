@@ -110,7 +110,8 @@ bash exp_640000.sh
 
 ### Siren activation
 
-![](images/siren.bmp)
+| ![](images/siren.bmp) |
+| :-------------------: |
 
 As Siren dependent on quality of initialization, in this experiment I didn't initialize it specially, so the outputs are bad.
 
