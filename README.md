@@ -1,8 +1,8 @@
 # Coordinate_based_MLPs
 
-## Overview
+## Intro
 
-Experiments of coordinate-based MLPs
+Experiments of coordinate-based MLPs based on Pytorch-lightning
 ``````mermaid
 graph LR
 	1[x]-->3[P.E.]-->4[Linear layers + activation<br>256]-->5[Linear layers + activation<br>256]-->6[Linear layers + activation<br>256]-->7[Linear layers + Sgmoid<br>256]
@@ -14,20 +14,20 @@ graph LR
 
 |               Positional Encoding               |             Equation             |
 | :---------------------------------------------: | :------------------------------: |
-|             Fourier feature mapping             |     ![](images/fourier.bmp)      |
-| Fourier feature mapping (Gaussian distribution) | ![](images/guassian_mapping.bmp) |
+| Fourier feature mapping  | $\gamma(v) = [..., \text{cos}(2\pi \sigma^{\frac{j}{m}}v), \text{sin}(2\pi \sigma^{\frac{j}{m}}v), ...]^T \\ \text{for j in } [0, m-1]$|
+| Fourier feature mapping (Gaussian distribution) | $\gamma(v) = [..., \text{cos}(2\pi Bv), \text{sin}(2\pi Bv), ...]^T \text{where each entry in B} \in \mathbb{R}^{m\times d} \text{is sampled from }\mathcal{N}(0, \sigma^2)$ |
 |                                                 |                                  |
 |             **Activation function**             |           **Equation**           |
-|                      ReLU                       |       ![](images/ReLU.bmp)       |
-|                      Siren                      |      ![](images/siren.bmp)       |
-|                    Gaussian                     |     ![](images/gaussian.bmp)     |
-|                    Quadratic                    |    ![](images/quadratic.bmp)     |
-|                 Multi Quadratic                 | ![](images/mutil_quardratic.bmp) |
-|                    Laplacian                    |    ![](images/laplacian.bmp)     |
-|                 Super-Gaussian                  |  ![](images/super_Gaussian.bmp)  |
-|                     ExpSin                      |      ![](images/expsin.bmp)      |
+|                      ReLU                       |       $\text{max}(0,x)$      |
+|                      Siren                      |      $\text{sin}(w_0\times W_x + b)$       |
+|                    Gaussian                     |     $e^{\frac{-0.5x^2}{a^2}}$     |
+|                    Quadratic                    |    $\frac{1}{1+(ax)^2}$     |
+|                 Multi Quadratic                 | $\frac{1}{\sqrt{1+(ax)^2}}$ |
+|                    Laplacian                    |    $e^{\frac{-\lvert x \rvert}{a}}$     |
+|                 Super-Gaussian                  |  $\left [  e^{\frac{-0.5x^2}{a^2}}\right ]^b$   |
+|                     ExpSin                      |      $e^{-\text{sin}(ax)}$      |
 
-## How to run
+## How to run?
 
 ### Data preparation
 
@@ -51,7 +51,7 @@ bash exp.sh
 bash exp_640000.sh
 ```
 
-## Experiments
+## Experiment logs
 
 ### ReLU  P.E.(Fourier Mapping)
 
